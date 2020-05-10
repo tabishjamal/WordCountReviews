@@ -6,10 +6,9 @@ from nltk import Cistem
 import csv
 from pprint import pprint
 import time
-nltk.download('stopwords')  # run once
+#nltk.download('stopwords')  # run once
 from nltk.corpus import stopwords
 from collections import OrderedDict
-
 stop_words = stopwords.words('german')
 print('Start...')
 
@@ -90,7 +89,8 @@ def stopword_removal(in_token_list, stem_flag):
 
 
 filename = 'C:\\Users\\tabis\\PycharmProjects\\sentiAnalysisGensim\\Master_Data_Milestone1.csv'
-review_category = 'all'
+#category_list=['Overall','Arbeitsatmosphäre','Kollegenzusammenhalt','Gleichberechtigung','Umgang mit älteren Kollegen','Umwelt-/Sozialbewusstsein']
+review_category = 'Arbeitsatmosphäre'
 token_list = fetch_tokens(filename, True, review_category)
 #print('token_list: ', token_list)
 
@@ -137,3 +137,4 @@ sorted_dict_stemmed = sort_dict(dict_with_count_stemmed)
 #### ---- Writing in file
 my_file_writer('sorted_words_count.csv', sorted_dict)
 my_file_writer('sorted_words_count_stemmed.csv', sorted_dict_stemmed)
+print('Enjoy..!!!')
